@@ -48,9 +48,10 @@ Cancel
     </div>
     <div class="bg-dark border-secondary card mb-3" style="width: 18rem;">
   <div class="card-body d-flex flex-wrap">
-    <p v-for="(color, index) in colors" :key="index" class="mx-1 d-flex color " >
-       <div class="color border-0 rounded-3 hoverCol" :style="{'background-color': color}" @click="backgroundColor = color"></div>
-        </p>
+    <div v-for="color in colors" :key="color" class="mx-1 d-flex color" >
+       <div class="color border-0 rounded-3 hoverCol" :style="{'background-color': color}" @click="backgroundColor = color">
+    </div>
+    </div>
     </div>
     </div>
     
@@ -75,7 +76,7 @@ const colors = ref(['#212529', '#181D31', '#3A1078', '#A10035', 'gray', 'purple'
 const showSetting = ref(false);
 const backgroundColor = ref('#212529');
 const showReset = ref(false);
-
+ 
 function noReset() {
     showReset.value = false
 }
