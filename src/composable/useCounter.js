@@ -13,7 +13,10 @@ function useCounter() {
   }
   function reset() {
       store.dispatch("reset")
-    }
+  }
+  function setValue() {
+    store.dispatch("setVal", Val)
+  }
 
   return {
      increment, decrement, reset};
