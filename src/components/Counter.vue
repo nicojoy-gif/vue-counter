@@ -6,7 +6,7 @@
       class="d-flex container-fluid justify-content-between align-items-center"
     >
       <button
-        @click="decrement"
+        @click="counter.decrement"
         type="button"
         class="btn btn-outline-secondary hover btn-lg rounded-circle text-light"
       >
@@ -14,7 +14,7 @@
       </button>
       <h1 class="display-1 font">{{ Counter }}</h1>
       <button
-        @click="increment"
+        @click="counter.increment"
         type="button"
         class="btn hover btn-outline-secondary btn-lg rounded-circle text-light"
       >
@@ -30,7 +30,7 @@ import useCounter from "../composable/useCounter";
 import { computed } from "vue";
 name: "Counter";
 const store = useStore();
-const { increment, decrement, reset } = useCounter();
+const counter = useCounter();
 const Counter = computed(() => {
   return store.getters.getCount;
 });
