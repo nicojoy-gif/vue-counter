@@ -30,7 +30,7 @@ import useCounter from "../composable/useCounter";
 import { computed } from "vue";
 name: "Counter";
 const store = useStore();
-const { increment, decrement } = useCounter();
+const { increment, decrement, reset } = useCounter();
 const Counter = computed(() => {
   return store.getters.getCount;
 });
